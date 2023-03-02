@@ -86,8 +86,8 @@ a:hover {
 /* Content Switcher */
 .list-group-item.active {
   color: white!important;
-  background: black!important;
-  border-color: black!important;
+  background: #A1CCA5!important;
+  border-color: #A1CCA5!important;
 }
 
 .list-group a {
