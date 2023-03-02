@@ -22,6 +22,9 @@ body{
     object-fit: cover;
 
 }
+.end{
+  text-align: end;
+}
 
 .about_me{
   color: #fff;
@@ -32,6 +35,13 @@ body{
   margin-top:1em;
   color: #fff;
 }
+
+
+#personal-info{
+  color: #fff;
+}
+
+
 
 /* HTML */
 html {
