@@ -1,7 +1,7 @@
 
-# Primo portfolio 
+# Primo portfolio
 
-# Descrizione
+## Descrizione
 
 Portfolio molto semplice e minimal per esporre i mie progetti, i miei contatti e le mie informazioni.
 
