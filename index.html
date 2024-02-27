@@ -1,183 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Luigi Miranda</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <meta name="google-site-verification" content="UkN9KA8EFlXS-QkZfX7vEC8F8leZTqpJ5lcBjdOb5c4" />
-  <style>
-  body, html{ font-family: 'Intro', Arial, Helvetica, sans-serif; line-height: 1; font-size: 16px; box-sizing: border-box;margin: 0;padding: 0;}*,*:before,*:after{ box-sizing: border-box; }h1,h2,h3,h4,h5,h6, p, ol, ul{margin: 0 0 1rem 0;padding: 0;}ol,ul{padding-left: 20px;line-height: 1.5;}img{height: auto;}h1{font-size: 4rem;} h2{font-size: 3rem;} h3{font-size: 2rem;} h4{font-size: 1rem;} h5{font-size: 0.8rem;} h6{font-size: 0.6rem;}a{text-decoration:none}
-  </style>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-md-12 col-lg-6">
-        <div class="profile-img">
-          <img src="./img/profilo.jpeg" alt="profile-image">
-        </div>
-      </div>
-      <div style="color: white;"  class="mt-3 col-md-12 col-lg-6">
-        <h3>Luigi Miranda</h3>
-        <p class="text-justify">Sono nato a San Giuseppe Vesuviano in provincia di Napoli l'8/06/1998, sono iscritto al corso di Laurea in Informatica presso l'Università degli Studi di Salerno. In questi anni ho acquisito molte conoscenze nell'ambito della Programmazione, della Logica Matematica e degli Algoritmi.</p>
-      </div>
-  </div>
-  </div>
-  <section>
-    <!-- ./content-switch -->
-    <div class="d-flex justify-content-center">
-      <div class="list-group list-group-horizontal-md" id="content-tabs" role="tablist">
-        <a class="list-group-item small text-uppercase active" id="list-experience-list" data-toggle="list" href="#aboutme" role="tab">About me</a>
-        <a class="list-group-item small text-uppercase" id="list-experience-list" data-toggle="list" href="#experience" role="tab">Experience</a>
-        <a class="list-group-item small text-uppercase" id="list-projects-list" data-toggle="list" href="#projects" role="tab">Projects</a>
-      </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigi Miranda</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet">
+    <meta name="google-site-verification"
+      content="UkN9KA8EFlXS-QkZfX7vEC8F8leZTqpJ5lcBjdOb5c4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.svg" alt="logo">
+      <img src="img/light-mode.svg" alt="light-mode">
+    </header>
+
+    <div class="title">
+      <span id="prompt">myPortfolio:~$</span>
+      <span id="hello">Hi, I’m</span>
+      <span id="title-name">Luigi Miranda</span>
     </div>
-    <!-- ./content-switch -->
-    <!-- ./content-body -->
-    <div class="container pt-4 tab-content">
-      <!-- ./aboutme-panel-->
-      <div style="color: white;" class="tab-pane fade show active" id="aboutme" role="tabpanel">
-        <h3 class="text-center" id="personal-info">Personal info</h3>
-        <div class="container">
-          <div class="row border-bottom">
-            <div class="col end">
-              <span>Nome</span>
-            </div>
-            <div class="col">
-              Luigi miranda
-            </div>
-          </div>
-          <div class="row border-bottom">
-            <div class="col end text-nowrap">
-              <span>Data di nascita</span>
-            </div>
-            <div class="col">
-              08/06/1998
-            </div>
-          </div>
-          <div class="row border-bottom">
-            <div class="col  end">
-              <span>Nato a</span>
-            </div>
-            <div class="col">
-              San Giuseppe Vesuviano(NA)
-            </div>
-          </div>
-          <div class="row border-bottom">
-            <div class="col end">
-              <span>Nazione</span>
-            </div>
-            <div class="col">
-              Italia
-            </div>
-          </div>
-          <div class="row border-bottom">
-            <div class="col end">
-              <span>GitHub</span>
-            </div>
-            <div class="col">
-              <a style="text-decoration: none; color:green" href="https://github.com/luigimiranda" target="_blank">github.com</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ./experience-panel-->
-      <div class="tab-pane fade show" id="experience" role="tabpanel">
-        <div class="row justify-content-lg-center">
-          <div class="col-lg">
-            <!-- Timeline -->
-            <div class="timeline-container">
-              <div class="timeline-block timeline-block-right">
-                <div class="marker"></div>
-                <div class="timeline-content">
-                  <h3 class="timeline-h3">Olimpiadi della Matematica</h3>
-                  <span class="timeline-span">Università Federico II di Napoli</span>
-                  <p class="text-muted small mb-3">19/02/2015</p>
-                  <p class="timeline-p text-justify">Classificato 21° nella graduatoria relativa alla gara provinciale delle olimpiadi della matematica svoltasi presso la sede di Monte S. Angelo dell'Università Federico II di Napoli.</p>
-                </div>
-              </div>
-          
-              <div class="timeline-block timeline-block-left">
-                <div class="timeline-content">
-                  <h3 class="timeline-h3">Second Year</h3>
-                  <span class="timeline-span">Some work experience</span>
-                  <p class="text-muted small mb-3">Experience Date</p>
-                  <p class="timeline-p text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                </div>
-                <div class="marker"></div>
-              </div>
-          
-              <div class="timeline-block timeline-block-right">
-                <div class="marker"></div>
-                <div class="timeline-content">
-                  <h3 class="timeline-h3">Third Year</h3>
-                  <span class="timeline-span">Some work experience</span>
-                  <p class="text-muted small mb-3">Experience Date</p>
-                  <p class="timeline-p text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                </div>
-              </div>
-            </div>
-            <!-- ./timeline -->
-          </div>
-        </div>
-      </div>
-      <!-- ./projects-panel-->
-      <div class="tab-pane fade show" id="projects" role="tabpanel">
-        <!-- TODO: Projects cards? Dunno. -->
-        <div class="row justify-content-lg-center">
-          <!-- ./project-1 -->
-          <div class="col-lg-8 pb-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Chemosmart</h4>
-                <p class="card-text">WebApp per otimizzare il processso di schedulazione delle sedute chemioterapiche negli ospedali.</p>
-                <ul class="list-inline social-icons">
-                  <li class="list-inline-item"><a href="#"><i class="fas fa-link"></i></a></li>
-                  <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-github"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Force next columns to break to new line -->
-          <div class="w-100"></div>
-          <!-- ./project-2 -->
-          <div class="col-lg-8 pb-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Snackz</h4>
-                <p class="card-text">Ecommerce per la vendita di snack da tutto il mondo.</p>
-                <ul class="list-inline social-icons">
-                  <li class="list-inline-item"><a href="#"><i class="fas fa-link"></i></a></li>
-                  <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-github"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Force next columns to break to new line -->
-          <div class="w-100"></div>
-          <!-- Force next columns to break to new line -->
-          <div class="w-100"></div>
-        </div>
-      </div>
+
+    <div class="profile-img">
+      <img src="img/profilo.jpeg" alt="profilo-image">
     </div>
-  </section>
-  
-  
 
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <div class="social-icons">
+      <img src="img/github.svg" alt="github-icon">
+      <img src="img/instagram.svg" alt="instagram-icon">
+      <img src="img/linkedin.svg" alt="linkedin-icon">
+      <img src="img/map.svg" alt="maps-icon">
+      <img src="img/gmail.svg" alt="mail-icon">
+    </div>
 
-</body>
+    <div class="navbar">
+      <div class="navbar-item focus" id="border-first">About me</div>
+      <div class="navbar-item">Experiences</div>
+      <div class="navbar-item" id="border-second">Projects</div>
+    </div>
+
+    <div class="content">
+      <p>Sono nato a San Giuseppe Vesuviano in provincia di Napoli l'8/06/1998,
+        sono iscritto al corso di Laurea Magistrale in Informatica presso
+        l'Università degli Studi di Salerno. Sono laureato triennale in
+        Informatica presso l’Università di Salerno. In questi anni ho acquisito
+        molte conoscenze nell'ambito della Programmazione, della Logica
+        Matematica e degli Algoritmi.</p>
+    </div>
+
+    <footer>
+
+    </footer>
+
+  </body>
+
 </html>
