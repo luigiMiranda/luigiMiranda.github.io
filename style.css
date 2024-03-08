@@ -4,17 +4,17 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*
     2. Remove default margin
   */
 * {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /*
@@ -23,8 +23,8 @@
     4. Improve text rendering
   */
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 /*
@@ -35,8 +35,8 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
 /*
@@ -46,7 +46,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /*
@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /*
@@ -67,115 +67,197 @@ h6 {
   */
 #root,
 #__next {
-  isolation: isolate;
+    isolation: isolate;
+}
+
+
+
+
+/*
+GRID CONTAINER
+*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
 }
 
 
 /*
 HEADER
 */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 3%;
+.header-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 /*
-TITLE PAGE
-*/
-.title {
-  font-size: 1.5em;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  TITLE PAGE
+  */
+.title-item {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 #prompt {
-  font-size: 0.7em;
-  color: #F1AC6C;
+    font-size: 1em;
+    color: #F1AC6C;
 
 }
 
+#hello {
+    font-size: 1.5em;
+}
+
 #title-name {
-  font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 #prompt,
 #hello,
 #title-name {
-  margin-right: 5px;
-  /* Aggiunge uno spazio tra gli span */
+    margin-right: 4px;
+    /* Aggiunge uno spazio tra gli span */
 }
 
 
 /*
-PROFILE IMAGE
-*/
+  PROFILE IMAGE
+  */
 .profile-img {
-  margin: 5% auto;
-
-  width: 166px;
-  height: 166px;
-  border-radius: 35%;
-  overflow: hidden;
-  position: relative;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 35%;
+    overflow: hidden;
+    position: relative;
 }
 
 .profile-img img {
-  width: 100%;
-  /* L'immagine si adatta alla larghezza del suo contenitore */
-  height: auto;
-  /* L'altezza si adatta proporzionalmente */
-  position: relative;
-  /* Per consentire l'uso di top */
-  top: -30px;
+    width: 100%;
+    /* L'immagine si adatta alla larghezza del suo contenitore */
+    height: auto;
+    /* L'altezza si adatta proporzionalmente */
+    position: relative;
+    /* Per consentire l'uso di top */
+    top: -30px;
 }
 
 /*
-SOCIAL ICONS
-*/
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+  SOCIAL ICONS
+  */
+.social-item {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.social-icons img {
-  width: 23px;
+.social-item img {
+    width: 20px;
 }
 
 /*
-NAVBAR
-*/
-.navbar {
-  display: flex;
-  justify-content: center;
-  margin: 5%;
+  NAVBAR
+  */
+.selection-item {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
-.navbar-item {
-  background-color: #D9D9D9;
-  padding: 8px;
+.selection-item-button {
+    background-color: #D9D9D9;
+    padding: 8px;
+}
+
+.selection-item-button:hover {
+    cursor: pointer;
 }
 
 .focus {
-  font-weight: 600;
-  background-color: #F1AC6C;
+    font-weight: 600;
+    background-color: #F1AC6C;
 }
 
-#border-first {
-  border-radius: 5px 0 0 5px;
+#about {
+    border-radius: 5px 0 0 5px;
 }
 
-#border-second {
-  border-radius: 0 5px 5px 0;
+#projects {
+    border-radius: 0 5px 5px 0;
 }
 
 
 /*
-CONTENT OF SETCION: ABOUT ME, EXPEREINCES, PROJECTS
-*/
-.content {
+  CONTENT OF SETCION: ABOUT ME, EXPEREINCES, PROJECTS
+  */
+.content-item {
+    padding: 20px;
+}
 
-  margin: 40px 20px 0 20px;
+
+/*
+  FOOTER
+*/
+.footer-item {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}
+
+/*NASCONDI CONTENT AL CLICK*/
+.hide{
+    display: none; 
+ }
+ 
+
+@media (min-width: 766px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+   
+
+    .header-item, .selection-item, .content-item, .footer-item{
+        grid-column: 1/3;
+    }
+
+    .social-item {
+        grid-column: 2/3;
+    }
+
+    .profile-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 35%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .content-item{
+        padding: 20px 100px;
+        margin: 20px;
+    }
+  
+}
+
+
+/*
+DARK MODE
+*/
+.dark-mode{
+    background-color: black;
+    color:white;
+}
+
+.dark{
+    filter: invert(100%);
+
 }

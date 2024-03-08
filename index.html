@@ -1,68 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet">
+        <meta name="google-site-verification"
+            content="UkN9KA8EFlXS-QkZfX7vEC8F8leZTqpJ5lcBjdOb5c4" />
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luigi Miranda</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-      rel="stylesheet">
-    <meta name="google-site-verification"
-      content="UkN9KA8EFlXS-QkZfX7vEC8F8leZTqpJ5lcBjdOb5c4" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+        <link rel="stylesheet" href="style.css">
+        <title>Luigi Miranda</title>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="header-item">
+                <img class="nav-icon" src="img/logo.svg" alt="logo">
+                <img class="nav-icon" id="mode-btn" src="img/light-mode.svg" alt="light-mode">
+            </div>
+            <div class="title-item">
+                <span id="prompt">myPortfolio:~$</span>
+                <span id="hello">Hi, I’m</span>
+                <span id="title-name">Luigi Miranda</span>
+            </div>
+            <div class="img-item">
+                <div class="profile-img">
+                    <img src="img/profilo.jpeg" alt="profilo-image">
+                </div>
+            </div>
+            <div class="social-item">
+                <img class="nav-icon"src="img/github.svg" alt="github-icon">
+                <img class="nav-icon"src="img/instagram.svg" alt="instagram-icon">
+                <img class="nav-icon"src="img/linkedin.svg" alt="linkedin-icon">
+                <img class="nav-icon"src="img/map.svg" alt="maps-icon">
+                <img class="nav-icon"src="img/gmail.svg" alt="mail-icon">
+            </div>
+            <div class="selection-item">
+                <div class="selection-item-button focus" id="about">About
+                    me</div>
+                <div class="selection-item-button" id="experiences">Experiences</div>
+                <div class="selection-item-button"
+                     id="projects">Projects</div>
+            </div>
+            <div class="content-item" id="about-content">
+                <p>Sono nato a San Giuseppe Vesuviano in provincia di Napoli
+                    l'8/06/1998,
+                    sono iscritto al corso di Laurea Magistrale in
+                    Informatica presso
+                    l'Università degli Studi di Salerno. Sono laureato
+                    triennale in
+                    Informatica presso l’Università di Salerno. In questi
+                    anni ho acquisito
+                    molte conoscenze nell'ambito della Programmazione, della
+                    Logica
+                    Matematica e degli Algoritmi.
+                </p>
+            </div>
 
-  <body>
-    <header>
-      <img src="img/logo.svg" alt="logo">
-      <img src="img/light-mode.svg" alt="light-mode">
-    </header>
+            <div class="content-item hide" id="experiences-content">
+                secondo
+            </div>
+            <div class="content-item hide" id="projects-content">
+                terzo
+            </div>
+            <div class="footer-item">
+                Footer
+            </div>
+        </div>
 
-    <div class="title">
-      <span id="prompt">myPortfolio:~$</span>
-      <span id="hello">Hi, I’m</span>
-      <span id="title-name">Luigi Miranda</span>
-    </div>
 
-    <div class="profile-img">
-      <img src="img/profilo.jpeg" alt="profilo-image">
-    </div>
 
-    <div class="social-icons">
-      <img src="img/github.svg" alt="github-icon">
-      <img src="img/instagram.svg" alt="instagram-icon">
-      <img src="img/linkedin.svg" alt="linkedin-icon">
-      <img src="img/map.svg" alt="maps-icon">
-      <img src="img/gmail.svg" alt="mail-icon">
-    </div>
 
-    <div class="navbar">
-      <div class="navbar-item focus" id="border-first">About me</div>
-      <div class="navbar-item">Experiences</div>
-      <div class="navbar-item" id="border-second">Projects</div>
-    </div>
 
-    <div class="content">
-      <p>Sono nato a San Giuseppe Vesuviano in provincia di Napoli l'8/06/1998,
-        sono iscritto al corso di Laurea Magistrale in Informatica presso
-        l'Università degli Studi di Salerno. Sono laureato triennale in
-        Informatica presso l’Università di Salerno. In questi anni ho acquisito
-        molte conoscenze nell'ambito della Programmazione, della Logica
-        Matematica e degli Algoritmi.</p>
-    </div>
 
-    <footer>
+        <script src="script.js">
 
-    </footer>
-
-  </body>
-
+            
+        </script>
+    </body>
 </html>
