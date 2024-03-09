@@ -36,12 +36,20 @@ projects_btn.addEventListener('click', () => {
 
 
 /* DARK MODE FUNCTION */
-const dark_mode = document.getElementById('mode-btn')
+const dark_mode = document.querySelectorAll('.dark-light-mode')
 const body = document.body
-nav_icon = document.querySelectorAll('.nav-icon')
-dark_mode.addEventListener('click', ()=>{
-   body.classList.toggle('dark-mode')
-   nav_icon.forEach(element => {
-    element.classList.toggle('dark')
-   });
-})
+const nav_icon = document.querySelectorAll('.nav-icon')
+const dark_btn = document.getElementById('dark')
+const light_btn = document.getElementById('light')
+dark_mode.forEach(element => {
+    element.addEventListener('click', () => {
+        dark_btn.style.display = dark_btn.style.display === 'none' ? 'block' : 'none'
+        light_btn.style.display = light_btn.style.display === 'none' ? 'block' : 'none'
+        body.classList.toggle('dark-mode')
+        nav_icon.forEach(el => {
+            el.classList.toggle('dark')
+        });
+    })
+});
+
+
