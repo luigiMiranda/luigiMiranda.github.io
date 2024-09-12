@@ -71,7 +71,9 @@ h6 {
 }
 
 
-
+html, body{
+    height: 100%;
+}
 
 /*
 GRID CONTAINER
