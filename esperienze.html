@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <title>Luigi Miranda</title>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <a href="index.html">
+                <li>/whoami</li>
+            </a>
+            <a href="esperienze.html">
+                <li>/experiences</li>
+            </a>
+            <a target="_blank" href="https://github.com/luigimiranda">
+                <li>/github</li>
+            </a>
+
+            <img class="nav-icon dark-light-mode" id="dark" src="img/light-mode.svg" alt="light-mode">
+            <img class="nav-icon dark-light-mode" id="light" src="img/dark-mode.svg" alt="dark-mode"
+                style="display: none;">
+        </ul>
+    </div>
+
+    <div class="presentazione">
+        <h2>ACSA - Automotive Cyber Security Accademy</h2>
+        <h2>Erasmus</h2>
+        <h2>Tirocinio</h2>
+
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        /* DARK MODE FUNCTION */
+        const dark_mode = document.querySelectorAll('.dark-light-mode')
+        const body = document.body
+        const nav_icon = document.querySelectorAll('.nav-icon')
+        const dark_btn = document.getElementById('dark')
+        const light_btn = document.getElementById('light')
+        dark_mode.forEach(element => {
+            element.addEventListener('click', () => {
+                dark_btn.style.display = dark_btn.style.display === 'none' ? 'block' : 'none'
+                light_btn.style.display = light_btn.style.display === 'none' ? 'block' : 'none'
+                body.classList.toggle('dark-mode')
+                nav_icon.forEach(el => {
+                    el.classList.toggle('dark')
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>

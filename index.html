@@ -1,108 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-            rel="stylesheet">
-        <meta name="google-site-verification"
-            content="UkN9KA8EFlXS-QkZfX7vEC8F8leZTqpJ5lcBjdOb5c4" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
-        <title>Luigi Miranda</title>
-        <meta name="description" content="Luigi Miranda personal website">
-        <meta name="author" content="Luigi Miranda">
-    </head>
-    <body>
-        <div class="grid-container">
-            <div class="header-item">
-                <img class="nav-icon" src="img/logo.svg" alt="logo">
-                <img class="nav-icon dark-light-mode" id="dark"
-                    src="img/light-mode.svg" alt="light-mode">
-                <img class="nav-icon dark-light-mode" id="light"
-                    src="img/dark-mode.svg" alt="dark-mode"
-                    style="display: none;">
-            </div>
-            <div class="title-item">
-                <h1>
-                    <span id="prompt">myPortfolio:~$</span>
-                    <span id="hello">Ciao, sono <span id="title-name">Luigi Miranda</span> </span>
-                </h1>
-                <!-- <div class="terminal-info">
-                    <div class="terminal-info-navbar">
-                        <img src="img/close-icon.svg" alt="close-icon">
-                    </div>
-                    <div class="terminal-info-content">
-                        <div class="terminal-info-content-text">
-                            Download my CV -------\>
-                        </div>
-                        <div class="terminal-info-content-img">
-                            <img src="img/curriculum.svg" alt="curriculum-icon">
-                        </div>
-                    </div>
-                </div>  -->
-                
-            </div>
-            <div class="img-item">
-                <div class="profile-img">
-                    <img src="img/profilo.jpeg" alt="profilo-image">
-                </div>
-            </div>
-            <div class="social-item">
-                <a href="https://github.com/luigimiranda"><img class="nav-icon" src="img/social-icon/github.svg"
-                    alt="github-icon"></a>
-                <img class="nav-icon" src="img/social-icon/instagram.svg"
-                    alt="instagram-icon">
-                <img class="nav-icon" src="img/social-icon/linkedin.svg"
-                    alt="linkedin-icon">
-                <img class="nav-icon" src="img/social-icon/map.svg"
-                    alt="maps-icon">
-                <img class="nav-icon" src="img/social-icon/gmail.svg"
-                    alt="mail-icon">
-            </div>
-            <div class="selection-item">
-                <div class="selection-item-button focus" id="about">About
-                    me</div>
-                <div class="selection-item-button"
-                    id="experiences">Experiences</div>
-                <div class="selection-item-button"
-                    id="projects">Projects</div>
-            </div>
-            <div class="content-item" id="about-content">
-                <p>Sono nato a San Giuseppe Vesuviano in provincia di Napoli
-                    l'8/06/1998,
-                    sono iscritto al corso di Laurea Magistrale in
-                    Informatica presso
-                    l'Università degli Studi di Salerno. Sono laureato
-                    triennale in
-                    Informatica presso l’Università di Salerno. In questi
-                    anni ho acquisito
-                    molte conoscenze nell'ambito della Programmazione, della
-                    Logica
-                    Matematica e degli Algoritmi.
-                </p>
-            </div>
 
-            <div class="content-item hide" id="experiences-content">
-                secondo
-            </div>
-            <div class="content-item hide" id="projects-content">
-                terzo
-            </div>
-            <div class="footer-item">
-                Footer
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <title>Luigi Miranda</title>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <a href="index.html">
+                <li>/whoami</li>
+            </a>
+            <a href="esperienze.html">
+                <li>/experiences</li>
+            </a>
+            <a target="_blank" href="https://github.com/luigimiranda">
+                <li>/github</li>
+            </a>
+
+            <img class="nav-icon dark-light-mode" id="dark" src="img/light-mode.svg" alt="light-mode">
+            <img class="nav-icon dark-light-mode" id="light" src="img/dark-mode.svg" alt="dark-mode"
+                style="display: none;">
+        </ul>
+    </div>
+
+
+
+
+    <div class="presentazione">
+        <p>Ciao sono Luigi miranda, un informatico. Sono nato il 08-06-1998 a San Giuseppe Vesuviano. Attualmente sono
+            iscritto alla magistrale in Sicurezza Informatica.</p>
+
+
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h2 style="margin: 0;">Laurea Triennale</h2>
+            <img src="img/laurea.png" width="30" height="30" alt="Icona Laurea">
         </div>
 
-        <script src="script.js">
 
-            
-        </script>
-    </body>
+        Mi sono iscritto al corso di Laurea Triennale in Informatica nel 2020, e ho conseguito il titolo nel 2023, con
+        una tesi in collaborazione tra l università degli studi di salerno e l ospedale ruggi e d aragona di salerno.
+
+        <div class="flex-titolo">
+            <h2>Laurea Magistrale</h2>
+        </div>
+        Sempre nel 2023 mi sono iscritto al corso di Laurea Magistrale in Informatica e più precisamente al percorso di
+        Sicurezza Informatica.
+
+        <h2>Passioni</h2>
+
+    </div>
+
+
+
+    <script>
+        /* DARK MODE FUNCTION */
+        const dark_mode = document.querySelectorAll('.dark-light-mode')
+        const body = document.body
+        const nav_icon = document.querySelectorAll('.nav-icon')
+        const dark_btn = document.getElementById('dark')
+        const light_btn = document.getElementById('light')
+        dark_mode.forEach(element => {
+            element.addEventListener('click', () => {
+                dark_btn.style.display = dark_btn.style.display === 'none' ? 'block' : 'none'
+                light_btn.style.display = light_btn.style.display === 'none' ? 'block' : 'none'
+                body.classList.toggle('dark-mode')
+                nav_icon.forEach(el => {
+                    el.classList.toggle('dark')
+                });
+            })
+        });
+    </script>
+</body>
+
 </html>
