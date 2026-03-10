@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigi Miranda | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #777777;
+            --line-color: #e0e0e0;
+            --link-color: #0000ee;
+            --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --nav-height: 80px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: #ffffff;
+                --accent-color: #999999;
+                --line-color: #333333;
+                --link-color: #4da3ff;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            transition: background-color 0.3s;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding-top: 60px;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: var(--bg-color);
+            padding: 25px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 0.8rem;
+            text-transform: lowercase;
+            opacity: 0.4;
+            transition: opacity 0.3s;
+            padding-bottom: 4px;
+            border-bottom: 1.5px solid transparent;
+        }
+
+        nav a.active {
+            opacity: 1;
+            border-bottom: 1.5px solid var(--text-color);
+        }
+
+        #lang-switch {
+            background: none;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 2px 6px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-left: 5px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: var(--nav-height); 
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
+        h2 { font-size: 1.1rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-color); }
+        h3 { font-size: 1rem; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--line-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34.5px; 
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--text-color);
+        }
+
+        .item-title { font-weight: 700; font-size: 1rem; display: block; }
+        .item-date { font-size: 0.8rem; color: var(--accent-color); font-weight: 400; margin-bottom: 5px; display: block; }
+        .item-desc { font-size: 0.95rem; margin-top: 5px; }
+
+        /* Skills */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skills-list li {
+            font-size: 0.85rem;
+            padding: 2px 10px;
+            border: 1px solid var(--line-color);
+            border-radius: 4px;
+        }
+
+        .cta-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .lang-it { display: none; }
+
+        /* Footer Contacts */
+        #contacts {
+            margin-top: 50px;
+            padding: 60px 0 100px 0;
+            border-top: 1px solid var(--line-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            nav { gap: 10px; }
+            nav a { font-size: 0.75rem; }
+            .footer-links { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="main-nav">
+        <a href="#whoami" class="nav-link active" id="link-whoami">whoami</a>
+        <a href="#experiences" class="nav-link" id="link-exp">experiences</a>
+        <a href="#projects" class="nav-link" id="link-proj">projects</a>
+        <a href="#contacts" class="nav-link" id="link-cont">contacts</a>
+        <button id="lang-switch">IT</button>
+    </nav>
+
+    <div class="container">
+        
+        <!-- SECTION: WHOAMI -->
+        <section id="whoami">
+            <h1>Luigi Miranda</h1>
+            
+            <div class="lang-en">
+                <p class="item-date">Born June 8, 1998 • San Giuseppe Vesuviano (NA), Italy</p>
+                <p>Italian programmer passionate about computer science, video games, and anime. Focused on building clean and functional technology.</p>
+                
+                <h3 style="margin-top:40px;">Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="item-date">2025 — 2026</span>
+                        <span class="item-title">Erasmus+ Program</span>
+                        <p class="item-desc">International academic exchange focusing on advanced engineering topics.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="item-date">2024 — Present</span>
+                        <span class="item-title">Master's Degree in Computer Science</span>
+                        <p class="item-desc">Deepening knowledge in cybersecurity and complex systems.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="item-date">2020 — 2023</span>
+                        <span class="item-title">Bachelor's Degree in Computer Science</span>
+                        <p class="item-desc">Foundational studies in software development, algorithms, and architectures.</p>
+                    </div>
+                </div>
+
+                <h3>Skills & Interests</h3>
+                <ul class="skills-list">
+                    <li>Cybersecurity</li>
+                    <li>Automotive Systems</li>
+                    <li>IoT</li>
+                    <li>C/C++</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <div class="lang-it">
+                <p class="item-date">Nato l'8 Giugno 1998 • San Giuseppe Vesuviano (NA)</p>
+                <p>Sono Luigi Miranda, un programmatore italiano. Appassionato di informatica, videogiochi e anime. Mi dedico allo sviluppo di tecnologie pulite e funzionali.</p>
+                
+                <h3 style="margin-top:40px;">Istruzione</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="item-date">2025 — 2026</span>
+                        <span class="item-title">Progetto Erasmus+</span>
+                        <p class="item-desc">Mobilità internazionale per studio su tematiche informatiche avanzate.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="item-date">2024 — In corso</span>
+                        <span class="item-title">Laurea Magistrale in Informatica</span>
+                        <p class="item-desc">Specializzazione in cybersecurity e sistemi complessi.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="item-date">2020 — 2023</span>
+                        <span class="item-title">Laurea Triennale in Informatica</span>
+                        <p class="item-desc">Studi fondamentali su sviluppo software, algoritmi e architetture.</p>
+                    </div>
+                </div>
+
+                <h3>Skill e Campi di Interesse</h3>
+                <ul class="skills-list">
+                    <li>Cybersecurity</li>
+                    <li>Sistemi Automotive</li>
+                    <li>IoT</li>
+                    <li>C/C++</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: EXPERIENCES -->
+        <section id="experiences">
+            <h2 class="lang-en">Experiences</h2>
+            <h2 class="lang-it">Esperienze</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="item-date">6 Months</span>
+                    <span class="item-title">Gachon University, South Korea</span>
+                    <p class="lang-en">Study abroad program focused on international technology and culture.</p>
+                    <p class="lang-it">Semestre di studio all'estero focalizzato su tecnologie e cultura internazionale.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="item-date">Academy</span>
+                    <span class="item-title">ACSA (Automotive Cybersecurity Academy)</span>
+                    <p class="lang-en">Specialized training on vehicle security and communication protocols.</p>
+                    <p class="lang-it">Accademia specializzata sulla sicurezza dei sistemi veicolari e protocolli automotive.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="item-date">Internship</span>
+                    <span class="item-title">Company Internship</span>
+                    <p class="lang-en">Software development and system integration in a corporate environment.</p>
+                    <p class="lang-it">Sviluppo software e integrazione sistemi in un contesto aziendale reale.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PROJECTS -->
+        <section id="projects">
+            <h2 class="lang-en">Projects</h2>
+            <h2 class="lang-it">Progetti</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="item-title">IoT Fall Detection System</span>
+                    <p class="lang-en">Real-time fall detection system using IoT sensors.</p>
+                    <p class="lang-it">Sistema di rilevamento cadute basato su sensori IoT.</p>
+                    <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="item-title">Picar-X Autonomous Driving</span>
+                    <p class="lang-en">Algorithms and vision for autonomous robotics.</p>
+                    <p class="lang-it">Algoritmi e computer vision per robotica autonoma.</p>
+                    <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="item-title">Bachelor's Thesis</span>
+                    <p class="lang-en">Research project for graduation.</p>
+                    <p class="lang-it">Progetto di ricerca per il conseguimento della laurea.</p>
+                    <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION/FOOTER: CONTACTS -->
+        <section id="contacts">
+            <h2 class="lang-en">Contacts</h2>
+            <h2 class="lang-it">Contatti</h2>
+            <div class="footer-links">
+                <a href="mailto:tuo.email@esempio.it">Email</a>
+                <a href="https://linkedin.com/in/luigimiranda">LinkedIn</a>
+                <a href="https://github.com/luigimiranda">GitHub</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // --- LOGICA CAMBIO LINGUA ---
+        const langBtn = document.getElementById('lang-switch');
+        const enElements = document.querySelectorAll('.lang-en');
+        const itElements = document.querySelectorAll('.lang-it');
+        let currentLang = 'en';
+
+        langBtn.addEventListener('click', () => {
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'none');
+                itElements.forEach(el => el.style.display = 'block');
+                langBtn.innerText = 'EN';
+                document.getElementById('link-whoami').innerText = 'chi sono';
+                document.getElementById('link-exp').innerText = 'esperienze';
+                document.getElementById('link-proj').innerText = 'progetti';
+                document.getElementById('link-cont').innerText = 'contatti';
+                currentLang = 'it';
+            } else {
+                enElements.forEach(el => el.style.display = 'block');
+                itElements.forEach(el => el.style.display = 'none');
+                langBtn.innerText = 'IT';
+                document.getElementById('link-whoami').innerText = 'whoami';
+                document.getElementById('link-exp').innerText = 'experiences';
+                document.getElementById('link-proj').innerText = 'projects';
+                document.getElementById('link-cont').innerText = 'contacts';
+                currentLang = 'en';
+            }
+        });
+
+        // --- GESTIONE SEZIONE ATTIVA (NAV INDICATOR) ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
