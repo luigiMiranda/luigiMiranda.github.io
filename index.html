@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luigi Miranda | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
     <style>
         :root {
             --bg-color: #ffffff;
@@ -94,7 +98,7 @@
 
         h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
         h2 { font-size: 1.1rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-color); }
-        h3 { font-size: 1rem; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+        h3 { font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
 
         /* Timeline */
         .timeline {
@@ -134,7 +138,7 @@
         .item-date { font-size: 0.8rem; color: var(--accent-color); font-weight: 400; margin-bottom: 5px; display: block; }
         .item-desc { font-size: 0.95rem; margin-top: 5px; }
 
-        /* Skills */
+        /* Skills badges */
         .skills-list {
             list-style: none;
             display: flex;
@@ -143,7 +147,7 @@
             margin-top: 10px;
         }
         .skills-list li {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             padding: 2px 10px;
             border: 1px solid var(--line-color);
             border-radius: 4px;
@@ -154,7 +158,7 @@
             text-decoration: none;
             font-size: 0.85rem;
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 5px;
             font-weight: 500;
         }
 
@@ -187,8 +191,8 @@
         .footer-links a:hover { opacity: 1; text-decoration: underline; }
 
         @media (max-width: 600px) {
-            nav { gap: 10px; }
-            nav a { font-size: 0.75rem; }
+            nav { gap: 8px; }
+            nav a { font-size: 0.7rem; }
             .footer-links { gap: 15px; }
         }
     </style>
@@ -211,24 +215,24 @@
             
             <div class="lang-en">
                 <p class="item-date">Born June 8, 1998 • San Giuseppe Vesuviano (NA), Italy</p>
-                <p>Italian programmer passionate about computer science, video games, and anime. Focused on building clean and functional technology.</p>
+                <p>Italian programmer passionate about computer science, video games, and anime. Based in San Giuseppe Vesuviano, focused on cybersecurity and software development.</p>
                 
                 <h3 style="margin-top:40px;">Education</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="item-date">2025 — 2026</span>
                         <span class="item-title">Erasmus+ Program</span>
-                        <p class="item-desc">International academic exchange focusing on advanced engineering topics.</p>
+                        <p class="item-desc">Study abroad exchange at Gachon University, South Korea (6 months).</p>
                     </div>
                     <div class="timeline-item">
                         <span class="item-date">2024 — Present</span>
                         <span class="item-title">Master's Degree in Computer Science</span>
-                        <p class="item-desc">Deepening knowledge in cybersecurity and complex systems.</p>
+                        <p class="item-desc">Curriculum: Cybersecurity. Ongoing.</p>
                     </div>
                     <div class="timeline-item">
                         <span class="item-date">2020 — 2023</span>
                         <span class="item-title">Bachelor's Degree in Computer Science</span>
-                        <p class="item-desc">Foundational studies in software development, algorithms, and architectures.</p>
+                        <p class="item-desc">Completed at University of Naples.</p>
                     </div>
                 </div>
 
@@ -236,32 +240,33 @@
                 <ul class="skills-list">
                     <li>Cybersecurity</li>
                     <li>Automotive Systems</li>
+                    <li>AI / Machine Learning</li>
+                    <li>Computer Vision</li>
                     <li>IoT</li>
-                    <li>C/C++</li>
-                    <li>Python</li>
+                    <li>Java / Python / C</li>
                 </ul>
             </div>
 
             <div class="lang-it">
                 <p class="item-date">Nato l'8 Giugno 1998 • San Giuseppe Vesuviano (NA)</p>
-                <p>Sono Luigi Miranda, un programmatore italiano. Appassionato di informatica, videogiochi e anime. Mi dedico allo sviluppo di tecnologie pulite e funzionali.</p>
+                <p>Sono Luigi Miranda, un programmatore italiano appassionato di informatica, videogiochi e anime. Vivo a San Giuseppe Vesuviano e mi occupo di sicurezza informatica e sviluppo software.</p>
                 
                 <h3 style="margin-top:40px;">Istruzione</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="item-date">2025 — 2026</span>
                         <span class="item-title">Progetto Erasmus+</span>
-                        <p class="item-desc">Mobilità internazionale per studio su tematiche informatiche avanzate.</p>
+                        <p class="item-desc">Programma di scambio presso la Gachon University in Corea del Sud (6 mesi).</p>
                     </div>
                     <div class="timeline-item">
                         <span class="item-date">2024 — In corso</span>
                         <span class="item-title">Laurea Magistrale in Informatica</span>
-                        <p class="item-desc">Specializzazione in cybersecurity e sistemi complessi.</p>
+                        <p class="item-desc">Percorso: Sicurezza Informatica.</p>
                     </div>
                     <div class="timeline-item">
                         <span class="item-date">2020 — 2023</span>
                         <span class="item-title">Laurea Triennale in Informatica</span>
-                        <p class="item-desc">Studi fondamentali su sviluppo software, algoritmi e architetture.</p>
+                        <p class="item-desc">Completata presso Università degli Studi di Napoli.</p>
                     </div>
                 </div>
 
@@ -269,9 +274,10 @@
                 <ul class="skills-list">
                     <li>Cybersecurity</li>
                     <li>Sistemi Automotive</li>
+                    <li>AI / Machine Learning</li>
+                    <li>Computer Vision</li>
                     <li>IoT</li>
-                    <li>C/C++</li>
-                    <li>Python</li>
+                    <li>Java / Python / C</li>
                 </ul>
             </div>
         </section>
@@ -283,22 +289,26 @@
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="item-date">6 Months</span>
-                    <span class="item-title">Gachon University, South Korea</span>
-                    <p class="lang-en">Study abroad program focused on international technology and culture.</p>
-                    <p class="lang-it">Semestre di studio all'estero focalizzato su tecnologie e cultura internazionale.</p>
+                    <span class="item-date">Gachon University, South Korea</span>
+                    <span class="item-title">Academic Exchange - AI & Wireless</span>
+                    <p class="lang-en">Completed courses in AI and Wireless Communication: Reinforcement Learning, Multi-agent Systems, and Wireless Communication Techniques.</p>
+                    <p class="lang-it">Sostenuti esami in ambito AI e Wireless: Reinforcement Learning, Multi-agent Systems e Wireless Communication Techniques.</p>
                 </div>
+
                 <div class="timeline-item">
                     <span class="item-date">Academy</span>
                     <span class="item-title">ACSA (Automotive Cybersecurity Academy)</span>
-                    <p class="lang-en">Specialized training on vehicle security and communication protocols.</p>
-                    <p class="lang-it">Accademia specializzata sulla sicurezza dei sistemi veicolari e protocolli automotive.</p>
+                    <p class="lang-en">One month of virtual lectures and 15 days at THM University (Germany). Focused on automotive security and co-authored a scientific paper on Battery Management Systems (BMS).</p>
+                    <p class="lang-it">Un mese di lezioni virtuali e 15 giorni in Germania presso la University of Applied Sciences Mittelhessen. Approfondita la sicurezza automotive e collaborazione alla scrittura di un paper scientifico sul BMS (Battery Management System).</p>
+                    <a href="https://automotive-cybersecurity.it/" class="cta-link">ACSA Website →</a>
                 </div>
+
                 <div class="timeline-item">
-                    <span class="item-date">Internship</span>
-                    <span class="item-title">Company Internship</span>
-                    <p class="lang-en">Software development and system integration in a corporate environment.</p>
-                    <p class="lang-it">Sviluppo software e integrazione sistemi in un contesto aziendale reale.</p>
+                    <span class="item-date">3 Months</span>
+                    <span class="item-title">Internship at Publisys S.p.A.</span>
+                    <p class="lang-en">Software development internship using Java.</p>
+                    <p class="lang-it">Tirocinio di 3 mesi focalizzato sullo sviluppo software in Java.</p>
+                    <a href="https://www.publisys.it/" class="cta-link">Publisys Website →</a>
                 </div>
             </div>
         </section>
@@ -310,21 +320,23 @@
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="item-title">IoT Fall Detection System</span>
-                    <p class="lang-en">Real-time fall detection system using IoT sensors.</p>
-                    <p class="lang-it">Sistema di rilevamento cadute basato su sensori IoT.</p>
-                    <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
-                </div>
-                <div class="timeline-item">
                     <span class="item-title">Picar-X Autonomous Driving</span>
-                    <p class="lang-en">Algorithms and vision for autonomous robotics.</p>
-                    <p class="lang-it">Algoritmi e computer vision per robotica autonoma.</p>
+                    <p class="lang-en">Autonomous driving prototype using Computer Vision and CNN-based learning implemented on a Picar-X robot.</p>
+                    <p class="lang-it">Prototipo di auto a guida autonoma basato su Computer Vision e apprendimento con reti neurali convoluzionali (CNN) usando Picar-X.</p>
                     <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
                 </div>
+
+                <div class="timeline-item">
+                    <span class="item-title">IoT Fall Detection System</span>
+                    <p class="lang-en">Fall detection system using Arduino Nano 33 BLE (C development) and a Flutter mobile app. Focused on Bluetooth protocols.</p>
+                    <p class="lang-it">Sistema di rilevamento cadute con Arduino Nano 33 BLE (C) e App Flutter. Implementazione di protocolli Bluetooth.</p>
+                    <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
+                </div>
+
                 <div class="timeline-item">
                     <span class="item-title">Bachelor's Thesis</span>
-                    <p class="lang-en">Research project for graduation.</p>
-                    <p class="lang-it">Progetto di ricerca per il conseguimento della laurea.</p>
+                    <p class="lang-en">Study of eye movements to define patterns in Parkinson's patients. Used Tobii Pro Glasses 3 and developed Python algorithms for data analysis.</p>
+                    <p class="lang-it">Studio dei movimenti oculari per definire pattern in pazienti affetti da Parkinson. Uso di Tobii Pro Glasses 3 e sviluppo algoritmi in Python.</p>
                     <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
                 </div>
             </div>
@@ -335,7 +347,7 @@
             <h2 class="lang-en">Contacts</h2>
             <h2 class="lang-it">Contatti</h2>
             <div class="footer-links">
-                <a href="mailto:tuo.email@esempio.it">Email</a>
+                <a href="mailto:luigi.miranda@example.com">Email</a>
                 <a href="https://linkedin.com/in/luigimiranda">LinkedIn</a>
                 <a href="https://github.com/luigimiranda">GitHub</a>
             </div>
@@ -344,7 +356,7 @@
     </div>
 
     <script>
-        // --- LOGICA CAMBIO LINGUA ---
+        // --- CAMBIO LINGUA ---
         const langBtn = document.getElementById('lang-switch');
         const enElements = document.querySelectorAll('.lang-en');
         const itElements = document.querySelectorAll('.lang-it');
@@ -372,7 +384,7 @@
             }
         });
 
-        // --- GESTIONE SEZIONE ATTIVA (NAV INDICATOR) ---
+        // --- ACTIVE NAV INDICATOR ---
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
