@@ -530,7 +530,7 @@
                 document.getElementById('link-cont').innerText = 'contatti';
                 document.getElementById('copy-btn').innerText = 'COPIA';
 
-                
+
                 currentLang = 'it';
             } else {
                 enElements.forEach(el => el.style.display = 'block');
@@ -551,12 +551,22 @@
 
         window.addEventListener('scroll', () => {
             let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
+
+            // Controllo se siamo arrivati in fondo alla pagina
+            const isBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
+
+            if (isBottom) {
+                // Se siamo in fondo, evidenzia forzatamente l'ultima sezione (contacts)
+                current = "contacts";
+            } else {
+                // Altrimenti usa la logica standard basata sulla posizione
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -565,7 +575,6 @@
                 }
             });
         });
-
 
         // --- LOGICA DEL POP-UP ---
         const modal = document.getElementById("email-modal");
