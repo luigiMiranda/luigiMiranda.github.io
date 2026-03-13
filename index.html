@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luigi Miranda | Portfolio</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 
     <style>
         :root {
@@ -29,9 +31,16 @@
             }
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -50,7 +59,9 @@
         /* Navbar */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             background: var(--bg-color);
             padding: 25px 0;
             z-index: 1000;
@@ -93,12 +104,31 @@
 
         section {
             margin-bottom: 80px;
-            scroll-margin-top: var(--nav-height); 
+            scroll-margin-top: var(--nav-height);
         }
 
-        h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
-        h2 { font-size: 1.1rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-color); }
-        h3 { font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
         /* Timeline */
         .timeline {
@@ -125,7 +155,7 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -34.5px; 
+            left: -34.5px;
             top: 7px;
             width: 10px;
             height: 10px;
@@ -134,9 +164,24 @@
             border: 1px solid var(--text-color);
         }
 
-        .item-title { font-weight: 700; font-size: 1rem; display: block; }
-        .item-date { font-size: 0.8rem; color: var(--accent-color); font-weight: 400; margin-bottom: 5px; display: block; }
-        .item-desc { font-size: 0.95rem; margin-top: 5px; }
+        .item-title {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .item-date {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 400;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
 
         /* Skills badges */
         .skills-list {
@@ -146,6 +191,7 @@
             gap: 10px;
             margin-top: 10px;
         }
+
         .skills-list li {
             font-size: 0.8rem;
             padding: 2px 10px;
@@ -162,7 +208,9 @@
             font-weight: 500;
         }
 
-        .lang-it { display: none; }
+        .lang-it {
+            display: none;
+        }
 
         /* Footer Contacts */
         #contacts {
@@ -188,15 +236,98 @@
             transition: opacity 0.2s;
         }
 
-        .footer-links a:hover { opacity: 1; text-decoration: underline; }
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Stile per il Modal (Pop-up) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        .modal-content {
+            background-color: var(--bg-color);
+            margin: 15% auto;
+            padding: 30px;
+            border: 1px solid var(--text-color);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+
+        .email-display {
+            font-weight: bold;
+            margin: 20px 0;
+            display: block;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 10px;
+        }
+
+        #copy-btn {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Rendi il bottone Email identico ai link del footer */
+        .footer-links button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: inherit;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            padding: 0;
+        }
+
+        .footer-links button:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
 
         @media (max-width: 600px) {
-            nav { gap: 8px; }
-            nav a { font-size: 0.7rem; }
-            .footer-links { gap: 15px; }
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav id="main-nav">
@@ -208,15 +339,16 @@
     </nav>
 
     <div class="container">
-        
+
         <!-- SECTION: WHOAMI -->
         <section id="whoami">
             <h1>Luigi Miranda</h1>
-            
+
             <div class="lang-en">
                 <p class="item-date">Born June 8, 1998 • San Giuseppe Vesuviano (NA), Italy</p>
-                <p>Italian programmer passionate about computer science, video games, and anime. Based in San Giuseppe Vesuviano, focused on cybersecurity and software development.</p>
-                
+                <p>Italian programmer passionate about computer science, video games, and anime. Based in San Giuseppe
+                    Vesuviano, focused on cybersecurity and software development.</p>
+
                 <h3 style="margin-top:40px;">Education</h3>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -249,14 +381,16 @@
 
             <div class="lang-it">
                 <p class="item-date">Nato l'8 Giugno 1998 • San Giuseppe Vesuviano (NA)</p>
-                <p>Sono Luigi Miranda, un programmatore italiano appassionato di informatica, videogiochi e anime. Vivo a San Giuseppe Vesuviano e mi occupo di sicurezza informatica e sviluppo software.</p>
-                
+                <p>Sono Luigi Miranda, un programmatore italiano appassionato di informatica, videogiochi e anime. Vivo
+                    a San Giuseppe Vesuviano e mi occupo di sicurezza informatica e sviluppo software.</p>
+
                 <h3 style="margin-top:40px;">Istruzione</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="item-date">2025 — 2026</span>
                         <span class="item-title">Progetto Erasmus+</span>
-                        <p class="item-desc">Programma di scambio presso la Gachon University in Corea del Sud (6 mesi).</p>
+                        <p class="item-desc">Programma di scambio presso la Gachon University in Corea del Sud (6 mesi).
+                        </p>
                     </div>
                     <div class="timeline-item">
                         <span class="item-date">2024 — In corso</span>
@@ -286,20 +420,25 @@
         <section id="experiences">
             <h2 class="lang-en">Experiences</h2>
             <h2 class="lang-it">Esperienze</h2>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="item-date">Gachon University, South Korea</span>
                     <span class="item-title">Academic Exchange - AI & Wireless</span>
-                    <p class="lang-en">Completed courses in AI and Wireless Communication: Reinforcement Learning, Multi-agent Systems, and Wireless Communication Techniques.</p>
-                    <p class="lang-it">Sostenuti esami in ambito AI e Wireless: Reinforcement Learning, Multi-agent Systems e Wireless Communication Techniques.</p>
+                    <p class="lang-en">Completed courses in AI and Wireless Communication: Reinforcement Learning,
+                        Multi-agent Systems, and Wireless Communication Techniques.</p>
+                    <p class="lang-it">Sostenuti esami in ambito AI e Wireless: Reinforcement Learning, Multi-agent
+                        Systems e Wireless Communication Techniques.</p>
                 </div>
 
                 <div class="timeline-item">
                     <span class="item-date">Academy</span>
                     <span class="item-title">ACSA (Automotive Cybersecurity Academy)</span>
-                    <p class="lang-en">One month of virtual lectures and 15 days at THM University (Germany). Focused on automotive security and co-authored a scientific paper on Battery Management Systems (BMS).</p>
-                    <p class="lang-it">Un mese di lezioni virtuali e 15 giorni in Germania presso la University of Applied Sciences Mittelhessen. Approfondita la sicurezza automotive e collaborazione alla scrittura di un paper scientifico sul BMS (Battery Management System).</p>
+                    <p class="lang-en">One month of virtual lectures and 15 days at THM University (Germany). Focused on
+                        automotive security and co-authored a scientific paper on Battery Management Systems (BMS).</p>
+                    <p class="lang-it">Un mese di lezioni virtuali e 15 giorni in Germania presso la University of
+                        Applied Sciences Mittelhessen. Approfondita la sicurezza automotive e collaborazione alla
+                        scrittura di un paper scientifico sul BMS (Battery Management System).</p>
                     <a href="https://www.thm.de/mnd/acsa" class="cta-link">ACSA Website →</a>
                 </div>
 
@@ -321,22 +460,28 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="item-title">Picar-X Autonomous Driving</span>
-                    <p class="lang-en">Autonomous driving prototype using Computer Vision and CNN-based learning implemented on a Picar-X robot.</p>
-                    <p class="lang-it">Prototipo di auto a guida autonoma basato su Computer Vision e apprendimento con reti neurali convoluzionali (CNN) usando Picar-X.</p>
+                    <p class="lang-en">Autonomous driving prototype using Computer Vision and CNN-based learning
+                        implemented on a Picar-X robot.</p>
+                    <p class="lang-it">Prototipo di auto a guida autonoma basato su Computer Vision e apprendimento con
+                        reti neurali convoluzionali (CNN) usando Picar-X.</p>
                     <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
                 </div>
 
                 <div class="timeline-item">
                     <span class="item-title">IoT Fall Detection System</span>
-                    <p class="lang-en">Fall detection system using Arduino Nano 33 BLE (C development) and a Flutter mobile app. Focused on Bluetooth protocols.</p>
-                    <p class="lang-it">Sistema di rilevamento cadute con Arduino Nano 33 BLE (C) e App Flutter. Implementazione di protocolli Bluetooth.</p>
+                    <p class="lang-en">Fall detection system using Arduino Nano 33 BLE (C development) and a Flutter
+                        mobile app. Focused on Bluetooth protocols.</p>
+                    <p class="lang-it">Sistema di rilevamento cadute con Arduino Nano 33 BLE (C) e App Flutter.
+                        Implementazione di protocolli Bluetooth.</p>
                     <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
                 </div>
 
                 <div class="timeline-item">
                     <span class="item-title">Bachelor's Thesis</span>
-                    <p class="lang-en">Study of eye movements to define patterns in Parkinson's patients. Used Tobii Pro Glasses 3 and developed Python algorithms for data analysis.</p>
-                    <p class="lang-it">Studio dei movimenti oculari per definire pattern in pazienti affetti da Parkinson. Uso di Tobii Pro Glasses 3 e sviluppo algoritmi in Python.</p>
+                    <p class="lang-en">Study of eye movements to define patterns in Parkinson's patients. Used Tobii Pro
+                        Glasses 3 and developed Python algorithms for data analysis.</p>
+                    <p class="lang-it">Studio dei movimenti oculari per definire pattern in pazienti affetti da
+                        Parkinson. Uso di Tobii Pro Glasses 3 e sviluppo algoritmi in Python.</p>
                     <a href="https://github.com/luigimiranda" class="cta-link">GitHub Project →</a>
                 </div>
             </div>
@@ -347,11 +492,23 @@
             <h2 class="lang-en">Contacts</h2>
             <h2 class="lang-it">Contatti</h2>
             <div class="footer-links">
-                <a href="mailto:luigi.miranda998@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/luigi-miranda/" target="_blank">LinkedIn</a>
+                <button id="email-trigger">Email</button>
+                <a href="https://linkedin.com/in/luigimiranda" target="_blank">LinkedIn</a>
                 <a href="https://github.com/luigimiranda" target="_blank">GitHub</a>
             </div>
         </section>
+
+        <!-- Struttura del Pop-up -->
+        <div id="email-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <p class="lang-en" style="font-weight: bold; font-size: 0.8rem; opacity: 0.6;">MY EMAIL ADDRESS</p>
+                <p class="lang-it" style="font-weight: bold; font-size: 0.8rem; opacity: 0.6;">IL MIO INDIRIZZO EMAIL
+                </p>
+                <span class="email-display" id="email-value">luigi.miranda998@gmail.com</span>
+                <button id="copy-btn">COPY</button>
+            </div>
+        </div>
 
     </div>
 
@@ -371,6 +528,9 @@
                 document.getElementById('link-exp').innerText = 'esperienze';
                 document.getElementById('link-proj').innerText = 'progetti';
                 document.getElementById('link-cont').innerText = 'contatti';
+                document.getElementById('copy-btn').innerText = 'COPIA';
+
+                
                 currentLang = 'it';
             } else {
                 enElements.forEach(el => el.style.display = 'block');
@@ -380,6 +540,7 @@
                 document.getElementById('link-exp').innerText = 'experiences';
                 document.getElementById('link-proj').innerText = 'projects';
                 document.getElementById('link-cont').innerText = 'contacts';
+                document.getElementById('copy-btn').innerText = 'COPY';
                 currentLang = 'en';
             }
         });
@@ -404,6 +565,33 @@
                 }
             });
         });
+
+
+        // --- LOGICA DEL POP-UP ---
+        const modal = document.getElementById("email-modal");
+        const btn = document.getElementById("email-trigger");
+        const span = document.getElementsByClassName("close-btn")[0];
+        const copyBtn = document.getElementById("copy-btn");
+
+        // Apri il pop-up
+        btn.onclick = () => modal.style.display = "block";
+
+        // Chiudi con la X
+        span.onclick = () => modal.style.display = "none";
+
+        // Chiudi cliccando fuori dal quadratino
+        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+
+        // Funzione Copia
+        copyBtn.onclick = () => {
+            const email = document.getElementById("email-value").innerText;
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = copyBtn.innerText;
+                copyBtn.innerText = (currentLang === 'en') ? "COPIED!" : "COPIATO!";
+                setTimeout(() => { copyBtn.innerText = originalText; }, 2000);
+            });
+        };
     </script>
 </body>
+
 </html>
