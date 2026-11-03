@@ -1,617 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luigi Miranda | Portfolio</title>
-
-    <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-
+    <title>Luigi Miranda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #777777;
-            --line-color: #e0e0e0;
-            --link-color: #0000ee;
-            --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --nav-height: 80px;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212;
-                --text-color: #ffffff;
-                --accent-color: #999999;
-                --line-color: #333333;
-                --link-color: #4da3ff;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            transition: background-color 0.3s;
-            padding: 0 20px;
-        }
-
-        .container {
             max-width: 650px;
-            margin: 0 auto;
-            padding-top: 60px;
+            margin: 50px auto;
+            padding: 0 20px;
+            color: #000;
         }
-
-        /* Navbar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-color);
-            padding: 25px 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 400;
-            font-size: 0.8rem;
-            text-transform: lowercase;
-            opacity: 0.4;
-            transition: opacity 0.3s;
-            padding-bottom: 4px;
-            border-bottom: 1.5px solid transparent;
-        }
-
-        nav a.active {
-            opacity: 1;
-            border-bottom: 1.5px solid var(--text-color);
-        }
-
-        #lang-switch {
-            background: none;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 2px 6px;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            opacity: 0.6;
-            margin-left: 5px;
-        }
-
-        section {
-            margin-bottom: 80px;
-            scroll-margin-top: var(--nav-height);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        h2 {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        h3 {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 40px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            bottom: 0;
-            width: 1px;
-            background-color: var(--line-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 35px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -34.5px;
-            top: 7px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--bg-color);
-            border: 1px solid var(--text-color);
-        }
-
-        .item-title {
-            font-weight: 700;
-            font-size: 1rem;
-            display: block;
-        }
-
-        .item-date {
-            font-size: 0.8rem;
-            color: var(--accent-color);
-            font-weight: 400;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .item-desc {
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
-        /* Skills badges */
-        .skills-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .skills-list li {
-            font-size: 0.8rem;
-            padding: 2px 10px;
-            border: 1px solid var(--line-color);
-            border-radius: 4px;
-        }
-
-        .cta-link {
-            color: var(--link-color);
-            text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-top: 5px;
-            font-weight: 500;
-        }
-
-        .lang-it {
-            display: none;
-        }
-
-        /* Footer Contacts */
-        #contacts {
-            margin-top: 50px;
-            padding: 60px 0 100px 0;
-            border-top: 1px solid var(--line-color);
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        /* Stile per il Modal (Pop-up) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(2px);
-        }
-
-        .modal-content {
-            background-color: var(--bg-color);
-            margin: 15% auto;
-            padding: 30px;
-            border: 1px solid var(--text-color);
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            opacity: 0.5;
-        }
-
-        .email-display {
-            font-weight: bold;
-            margin: 20px 0;
-            display: block;
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 10px;
-        }
-
-        #copy-btn {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            border: none;
-            padding: 8px 20px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Rendi il bottone Email identico ai link del footer */
-        .footer-links button {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            font-family: inherit;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-            padding: 0;
-        }
-
-        .footer-links button:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                gap: 8px;
-            }
-
-            nav a {
-                font-size: 0.7rem;
-            }
-
-            .footer-links {
-                gap: 15px;
-            }
-        }
+        h2 { margin-top: 2em; }
+        nav { font-size: 0.9em; margin-bottom: 3em; }
+        .note { font-size: 0.85em; color: #666; }
     </style>
 </head>
-
 <body>
 
-    <nav id="main-nav">
-        <a href="#whoami" class="nav-link active" id="link-whoami">whoami</a>
-        <a href="#experiences" class="nav-link" id="link-exp">experiences</a>
-        <a href="#projects" class="nav-link" id="link-proj">projects</a>
-        <a href="#contacts" class="nav-link" id="link-cont">contacts</a>
-        <button id="lang-switch">IT</button>
+    <nav>
+        [ <strong>IT</strong> | <a href="en.html">EN</a> | <a href="ko.html">KO</a> ]<br>
+        <span class="note">Il sito per i miei amici italiani, inglesi e coreani. Aggiungerò altre lingue se viaggerò ancora o se diventerete miei amici.</span>
     </nav>
 
-    <div class="container">
+    <p>Ti aspettavi un portfolio in React con animazioni, librerie inutili e grafici auto-aggiornanti? Mi dispiace deluderti. Non ho nessuna voglia di imparare un framework frontend che verrà superato da uno nuovissimo tra tre mesi, specialmente ora che un LLM sa scriverlo e usarlo meglio. Nel mio mondo, meno codice scrivi, minore è la superficie di attacco. Questo è tutto ciò che ti serve sapere su di me.</p>
 
-        <!-- SECTION: WHOAMI -->
-        <section id="whoami">
-            <h1>Luigi Miranda</h1>
+    <h2>whoami</h2>
+    <p>Mi chiamo Luigi Miranda (classe '98), ma ho così tanti soprannomi che puoi chiamarmi come preferisci: Gigi, Gino, Pit, Lu, GG, Ginos, Chu, Gnu, Bujak, e potrei continuare così all'infinito. Vengo da San Giuseppe Vesuviano, provincia di Napoli: un posto noto per un settore tessile ormai decadente e un dialetto di cui non vado esattamente fiero.</p>
+    <p>Ho passato tre anni a studiare Chimica e Tecnologie Farmaceutiche, poi ho pensato che la vita fosse troppo semplice. Così ho preso la decisione più "facile" di tutte e sono passato a Informatica.</p>
 
-            <div class="lang-en">
-                <p class="item-date">Born June 8, 1998 • San Giuseppe Vesuviano (NA), Italy</p>
-                <p>Italian Computer Science graduate student specializing in Cybersecurity. Passionate about machine learning, and embedded systems. Currently based in San Giuseppe Vesuviano, with experience in both academic research and industry internships.</p>
+    <h2>La triennale</h2>
+    <p>Durante la triennale ho capito che il C è il mio linguaggio. Puro, diretto, senza filtri. Se mi chiedi quante lingue parlo, ti rispondo cinque: italiano, inglese, napoletano (sì, vale come lingua), coreano (una quindicina di parole in croce, ma ci sto lavorando) e, ovviamente, il C.</p>
+    <p>Sempre in quel periodo ho accarezzato l'oscura idea di diventare un full-stack developer. Ne sono guarito in fretta, capendo che il web moderno è un castello di carte fatto di astrazioni e vulnerabilità ignorate, dove si pensa solo all'estetica a discapito dell'efficienza e della sicurezza.</p>
 
-                <h3 style="margin-top:40px;">Education</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="item-date">Sep 2025 — Feb 2026</span>
-                        <span class="item-title">Erasmus+ — Gachon University</span>
-                        <p class="item-desc">Extra-EU Erasmus+ International Credit Mobility exchange in Seongnam, South Korea. Completed courses in Reinforcement Learning, Multi-agent Systems, and Wireless Communication Techniques.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Sep 2024 — Mar 2027</span>
-                        <span class="item-title">Master's Degree in Computer Science (Cybersecurity)</span>
-                        <p class="item-desc">University of Salerno, Fisciano, Italy. Current average score: 29/30.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Aug 2025</span>
-                        <span class="item-title">ACSA — Automotive Cyber Security Academy</span>
-                        <p class="item-desc">University of Applied Sciences Mittelhessen, Gießen, Germany. One month of virtual lectures and 15 days on-site. Focused on automotive security and co-authored a scientific paper on Battery Management Systems (BMS).</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Sep 2020 — Dec 2023</span>
-                        <span class="item-title">Bachelor's Degree in Computer Science</span>
-                        <p class="item-desc">University of Salerno, Fisciano, Italy. Grade: 107/110. Thesis: Implementation and Optimization of Algorithms for Ocular Data Analysis in Parkinson's Patients.</p>
-                    </div>
-                </div>
+    <h2>La magistrale (석사 학위)</h2>
+    <p>Proprio scoprendo il mondo delle vulnerabilità durante la triennale, ho deciso di iscrivermi alla magistrale in Sicurezza Informatica (che concluderò a marzo 2027). È un settore enorme e complesso che sto cercando di esplorare a fondo.</p>
+    <p>A un certo punto, però, la routine casalinga ha iniziato ad annoiarmi, così sono partito per studiare in Corea del Sud per sei mesi. L'esperienza mi è piaciuta al punto che ho deciso di tornarci, sei mesi dopo, per un altro semestre a scrivere la tesi. In pratica, la mia magistrale è 50% made in italy e 50% made in corea.</p>
 
-                <h3>Skills</h3>
-                <ul class="skills-list">
-                    <li>C</li>
-                    <li>Python</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>Linux</li>
-                    <li>Computer Vision</li>
-                    <li>IoT / Embedded Systems</li>
-                </ul>
-            </div>
+    <h2>Cosa penso dell'IA</h2>
+    <p>Oggi l'IA sta divorando ogni cosa, inclusa parte della mia voglia di studiare. Proprio per questo ho riscoperto la bellezza di reinventare la ruota da zero, invece di avere tutto pronto in cinque minuti. Non fraintendetemi, non sono un "ateo dell'IA" o un terrapiattista degli LLM: uso gli LLM tutti i giorni (probabilmente anche troppo) e ne sfrutto tutto il potenziale. A dirla tutta, a volte mi hanno persino spaventato (<a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank">leggi qui se ti va</a>). Ma studio cybersecurity, la mia <em>forma mentis</em> mi vieta di fidarmi ciecamente di qualsiasi cosa, figuriamoci di un algoritmo probabilistico. Diciamo che la paranoia professionale era inclusa nelle tasse universitarie.</p>
 
-            <div class="lang-it">
-                <p class="item-date">Nato l'8 Giugno 1998 • San Giuseppe Vesuviano (NA)</p>
-                <p>Sono Luigi Miranda, studente magistrale in Informatica con specializzazione in Cybersecurity. Appassionato di machine learning e sistemi embedded. Attualmente vivo a San Giuseppe Vesuviano, con esperienze sia in ambito accademico che in stage aziendali.</p>
+    <h2>Mi piace:</h2>
+    <ul>
+        <li>Il C (l'ho già detto?)</li>
+        <li>Java (ma <strong>non</strong> JavaScript)</li>
+        <li>Python</li>
+        <li>Gli gnocchi alla sorrentina</li>
+        <li>Linux</li>
+        <li>Le reti</li>
+        <li>Il bibimbap</li>
+    </ul>
 
-                <h3 style="margin-top:40px;">Istruzione</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="item-date">Set 2025 — Feb 2026</span>
-                        <span class="item-title">Erasmus+ — Gachon University</span>
-                        <p class="item-desc">Programma Erasmus+ Extra-UE (International Credit Mobility) a Seongnam, Corea del Sud. Sostenuti esami in Reinforcement Learning, Multi-agent Systems e Wireless Communication Techniques.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Set 2024 — Mar 2027</span>
-                        <span class="item-title">Laurea Magistrale in Informatica (Cybersecurity)</span>
-                        <p class="item-desc">Università degli Studi di Salerno, Fisciano. Media attuale: 29/30.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Ago 2025</span>
-                        <span class="item-title">ACSA — Automotive Cyber Security Academy</span>
-                        <p class="item-desc">University of Applied Sciences Mittelhessen, Gießen, Germania. Un mese di lezioni virtuali e 15 giorni in presenza. Approfondita la sicurezza automotive e co-autore di un paper scientifico sul BMS (Battery Management System).</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="item-date">Set 2020 — Dic 2023</span>
-                        <span class="item-title">Laurea Triennale in Informatica</span>
-                        <p class="item-desc">Università degli Studi di Salerno, Fisciano. Voto: 107/110. Tesi: Implementazione e Ottimizzazione di Algoritmi per l'Analisi di Dati Oculari in Pazienti Parkinsoniani.</p>
-                    </div>
-                </div>
+    <h2>Non mi piace:</h2>
+    <ul>
+        <li>Windows (ha il talento naturale di rallentarsi o aggiornarsi nell'esatto momento in cui ho bisogno di essere veloce)</li>
+        <li>JavaScript</li>
+        <li>I meeting che potevano essere una mail</li>
+    </ul>
 
-                <h3>Competenze</h3>
-                <ul class="skills-list">
-                    <li>C</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>Express.js</li>
-                    <li>Mongoose</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>Linux</li>
-                    <li>Cybersecurity</li>
-                    <li>Machine Learning</li>
-                    <li>Computer Vision</li>
-                    <li>IoT / Sistemi Embedded</li>
-                </ul>
-            </div>
-        </section>
+    <h2>Contatti</h2>
+    <p>Se sei un'azienda: <a href="#">CV serio</a> | <a href="#">LinkedIn</a></p>
+    <p>Se sei solo curioso: <a href="#">GitHub</a></p>
 
-        <!-- SECTION: EXPERIENCES -->
-        <section id="experiences">
-            <h2 class="lang-en">Experiences</h2>
-            <h2 class="lang-it">Esperienze</h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="item-date">Sep 2025 — Feb 2026 · Seongnam, South Korea</span>
-                    <span class="item-title">Academic Exchange — Gachon University</span>
-                    <p class="lang-en item-desc">Erasmus+ exchange program. Completed advanced courses in Reinforcement Learning, Multi-agent Systems, and Wireless Communication Techniques.</p>
-                    <p class="lang-it item-desc">Programma di scambio Erasmus+. Sostenuti esami avanzati in Reinforcement Learning, Multi-agent Systems e Wireless Communication Techniques.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="item-date">Aug 2025 · Gießen, Germany</span>
-                    <span class="item-title">ACSA — Automotive Cyber Security Academy</span>
-                    <p class="lang-en item-desc">One month of virtual lectures followed by 15 days at the University of Applied Sciences Mittelhessen. Focused on automotive cybersecurity and co-authored a scientific paper on Battery Management Systems (BMS).</p>
-                    <p class="lang-it item-desc">Un mese di lezioni virtuali e 15 giorni in presenza presso la University of Applied Sciences Mittelhessen. Approfondita la sicurezza automotive e collaborazione alla stesura di un paper scientifico sul BMS (Battery Management System).</p>
-                    <a href="https://www.thm.de/mnd/acsa" class="cta-link" target="_blank">ACSA Website →</a>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="item-date">Aug 2023 — Nov 2023 · Potenza, Italy</span>
-                    <span class="item-title">Software Developer Intern — Publisys S.p.A.</span>
-                    <p class="lang-en item-desc">Full-time internship during Bachelor's program. Developed a Java web module (JSF, Hibernate, Tomcat) integrated into an HR management system for public administrations and healthcare institutions. Integrated Google Maps APIs to automatically calculate home-to-work distances for employee travel allowance computation.</p>
-                    <p class="lang-it item-desc">Tirocinio full-time durante la triennale. Sviluppato un modulo web Java (JSF, Hibernate, Tomcat) integrato in un sistema gestionale HR per PA e strutture sanitarie. Integrazione delle API di Google Maps per il calcolo automatico delle distanze casa-lavoro per il rimborso spese dipendenti.</p>
-                    <a href="https://www.publisys.it/" class="cta-link" target="_blank">Publisys Website →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: PROJECTS -->
-        <section id="projects">
-            <h2 class="lang-en">Projects</h2>
-            <h2 class="lang-it">Progetti</h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="item-title">PrioritAIze</span>
-                    <p class="lang-en item-desc">
-                        
-                    </p>
-                    <p class="lang-it item-desc"></p>
-                    <a href="https://github.com/luigiMiranda/PrioritAIze" class="cta-link" target="_blank">GitHub Project →</a>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="item-title">IoT Fall Detection System</span>
-                    <p class="lang-en item-desc">Embedded system in C on Arduino Nano 33 BLE for fall detection via accelerometer, with real-time communication using Bluetooth Low Energy (BLE). Built an Android app in Flutter for continuous device monitoring and BLE alert reception. Implemented a Python bot for automatic emergency notifications to designated contacts.</p>
-                    <p class="lang-it item-desc">Sistema embedded in C su Arduino Nano 33 BLE per il rilevamento cadute tramite accelerometro, con comunicazione real-time via Bluetooth Low Energy (BLE). App Android in Flutter per il monitoraggio continuo e la ricezione di alert BLE. Bot Python per notifiche di emergenza automatiche ai contatti designati.</p>
-                    <a href="https://github.com/luigiMiranda/IoTFallDetectionSystem" class="cta-link" target="_blank">GitHub Project →</a>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="item-title">ChemoSmart — Chemotherapy Scheduler</span>
-                    <p class="lang-en item-desc">Team project (6 members). Web app for hospital chemotherapy session scheduling, featuring an AI module for automatic optimization. Stack: HTML5, CSS3, Bootstrap, JavaScript (front-end), Node.js + Express.js (back-end & REST APIs), Python (AI module), MongoDB (database).</p>
-                    <p class="lang-it item-desc">Progetto di gruppo (6 persone). Web app per la pianificazione delle sessioni di chemioterapia ospedaliera, con modulo AI per l'ottimizzazione automatica. Stack: HTML5, CSS3, Bootstrap, JavaScript (front-end), Node.js + Express.js (back-end & REST API), Python (modulo AI), MongoDB (database).</p>
-                    <a href="https://github.com/luigimiranda" class="cta-link" target="_blank">GitHub Project →</a>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="item-title">Bachelor's Thesis — Ocular Data Analysis in Parkinson's</span>
-                    <p class="lang-en item-desc">Study of eye movements to define patterns in Parkinson's patients. Used Tobii Pro Glasses 3 for data acquisition and developed Python algorithms for data analysis and optimization.</p>
-                    <p class="lang-it item-desc">Studio dei movimenti oculari per definire pattern nei pazienti affetti da Parkinson. Utilizzo dei Tobii Pro Glasses 3 per l'acquisizione dati e sviluppo di algoritmi Python per l'analisi e l'ottimizzazione dei dati.</p>
-                    <a href="https://github.com/luigiMiranda/Tesi-Triennale" class="cta-link" target="_blank">GitHub Project →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION/FOOTER: CONTACTS -->
-        <section id="contacts">
-            <h2 class="lang-en">Contacts</h2>
-            <h2 class="lang-it">Contatti</h2>
-            <div class="footer-links">
-                <button id="email-trigger">Email</button>
-                <a href="https://linkedin.com/in/luigi-miranda" target="_blank">LinkedIn</a>
-                <a href="https://github.com/luigimiranda" target="_blank">GitHub</a>
-            </div>
-        </section>
-
-        <!-- Struttura del Pop-up -->
-        <div id="email-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <p class="lang-en" style="font-weight: bold; font-size: 0.8rem; opacity: 0.6;">MY EMAIL ADDRESS</p>
-                <p class="lang-it" style="font-weight: bold; font-size: 0.8rem; opacity: 0.6;">IL MIO INDIRIZZO EMAIL</p>
-                <span class="email-display" id="email-value">luigi.miranda998@gmail.com</span>
-                <button id="copy-btn">COPY</button>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        // --- CAMBIO LINGUA ---
-        const langBtn = document.getElementById('lang-switch');
-        const enElements = document.querySelectorAll('.lang-en');
-        const itElements = document.querySelectorAll('.lang-it');
-        let currentLang = 'en';
-
-        langBtn.addEventListener('click', () => {
-            if (currentLang === 'en') {
-                enElements.forEach(el => el.style.display = 'none');
-                itElements.forEach(el => el.style.display = 'block');
-                langBtn.innerText = 'EN';
-                document.getElementById('link-whoami').innerText = 'chi sono';
-                document.getElementById('link-exp').innerText = 'esperienze';
-                document.getElementById('link-proj').innerText = 'progetti';
-                document.getElementById('link-cont').innerText = 'contatti';
-                document.getElementById('copy-btn').innerText = 'COPIA';
-
-
-                currentLang = 'it';
-            } else {
-                enElements.forEach(el => el.style.display = 'block');
-                itElements.forEach(el => el.style.display = 'none');
-                langBtn.innerText = 'IT';
-                document.getElementById('link-whoami').innerText = 'whoami';
-                document.getElementById('link-exp').innerText = 'experiences';
-                document.getElementById('link-proj').innerText = 'projects';
-                document.getElementById('link-cont').innerText = 'contacts';
-                document.getElementById('copy-btn').innerText = 'COPY';
-                currentLang = 'en';
-            }
-        });
-
-        // --- ACTIVE NAV INDICATOR ---
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = "";
-
-            // Controllo se siamo arrivati in fondo alla pagina
-            const isBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
-
-            if (isBottom) {
-                // Se siamo in fondo, evidenzia forzatamente l'ultima sezione (contacts)
-                current = "contacts";
-            } else {
-                // Altrimenti usa la logica standard basata sulla posizione
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= (sectionTop - 150)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-            }
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // --- LOGICA DEL POP-UP ---
-        const modal = document.getElementById("email-modal");
-        const btn = document.getElementById("email-trigger");
-        const span = document.getElementsByClassName("close-btn")[0];
-        const copyBtn = document.getElementById("copy-btn");
-
-        // Apri il pop-up
-        btn.onclick = () => modal.style.display = "block";
-
-        // Chiudi con la X
-        span.onclick = () => modal.style.display = "none";
-
-        // Chiudi cliccando fuori dal quadratino
-        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
-
-        // Funzione Copia
-        copyBtn.onclick = () => {
-            const email = document.getElementById("email-value").innerText;
-            navigator.clipboard.writeText(email).then(() => {
-                const originalText = copyBtn.innerText;
-                copyBtn.innerText = (currentLang === 'en') ? "COPIED!" : "COPIATO!";
-                setTimeout(() => { copyBtn.innerText = originalText; }, 2000);
-            });
-        };
-    </script>
 </body>
-
 </html>
